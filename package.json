@@ -1,0 +1,27 @@
+{
+  "name": "serverless-url-shortener",
+  "version": "1.0.0",
+  "description": "Private url shortener using AWS Cloud",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/quyenphamkhac/serverless-url-shortener.git"
+  },
+  "keywords": [
+    "serverless",
+    "terraform",
+    "url-shortener"
+  ],
+  "author": "Quyen Pham Khac",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/quyenphamkhac/serverless-url-shortener/issues"
+  },
+  "homepage": "https://github.com/quyenphamkhac/serverless-url-shortener#readme"
+}
