@@ -109,3 +109,9 @@ dist
 # Terraform state files
 *.tfstate
 *.tfstate.*
+
+# Terraform tfvars
+*.tfvars
+
+#.vscode
+.vscode
