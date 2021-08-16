@@ -115,3 +115,7 @@ dist
 
 #.vscode
 .vscode
+
+
+# build artifacts
+builds
