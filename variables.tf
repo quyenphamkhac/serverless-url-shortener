@@ -14,3 +14,24 @@ variable "memory_size" {
   type        = number
   default     = 512
 }
+
+###########
+# Environment
+###########
+variable "env_stage" {
+  description = "Service environment stage name"
+  type        = string
+  default     = "Dev"
+}
+
+variable "service_name" {
+  description = "Service name"
+  type        = string
+  default     = ""
+}
+
+variable "app_name" {
+  description = "Application name"
+  type        = string
+  default     = ""
+}
