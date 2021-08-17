@@ -17,7 +17,7 @@ exports.handler = async (event, context, callback) => {
         TableName: TABLE_NAME,
         Item: {
           Id: shortId,
-          Ttl: timeEpoch() + daysTolive * DAY_TO_SECS,
+          TTL: timeEpoch() + daysTolive * DAY_TO_SECS,
           OriginalUrl: url,
           Timestamp: timeEpoch(),
         },
