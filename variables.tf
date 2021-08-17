@@ -35,3 +35,12 @@ variable "app_name" {
   type        = string
   default     = ""
 }
+
+###########
+# DynamoDB
+###########
+variable "table_name" {
+  description = "DynamoDB table name for shortener url service"
+  type        = string
+  default     = ""
+}

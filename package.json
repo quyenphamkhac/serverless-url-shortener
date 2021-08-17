@@ -23,5 +23,8 @@
   "bugs": {
     "url": "https://github.com/quyenphamkhac/serverless-url-shortener/issues"
   },
-  "homepage": "https://github.com/quyenphamkhac/serverless-url-shortener#readme"
+  "homepage": "https://github.com/quyenphamkhac/serverless-url-shortener#readme",
+  "dependencies": {
+    "aws-sdk": "^2.969.0"
+  }
 }

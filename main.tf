@@ -37,6 +37,37 @@ resource "aws_cloudwatch_log_group" "this" {
 }
 
 ###################
+# DynamoDB
+###################
+resource "aws_dynamodb_table" "this" {
+  name         = var.table_name
+  billing_mode = "PAY_PER_REQUEST"
+  hash_key     = "Id"
+  range_key    = "Timestamp"
+
+  attribute {
+    name = "Id"
+    type = "S"
+  }
+
+  attribute {
+    name = "Timestamp"
+    type = "S"
+  }
+
+  ttl {
+    attribute_name = "TTL"
+    enabled        = true
+  }
+
+  tags = {
+    "Name"        = var.table_name
+    "Environment" = var.env_stage
+    "App"         = var.app_name
+  }
+}
+
+###################
 # HTTP API Gateway
 ###################
 module "api_gateway" {
