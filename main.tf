@@ -140,6 +140,15 @@ module "lambda_redirector" {
     }
   }
 
+  attach_policy_statements = true
+  policy_statements = {
+    dynamodb = {
+      effect    = "Allow",
+      actions   = ["dynamodb:*"],
+      resources = [aws_dynamodb_table.this.arn, "${aws_dynamodb_table.this.arn}/*"]
+    }
+  }
+
   environment_variables = {
     "SERVERLESS_PLATFORM" = "Terraform"
   }
@@ -167,6 +176,15 @@ module "lambda_shortener" {
     "APIGatewayAny" = {
       service    = "apigateway"
       source_arn = "${module.api_gateway.apigatewayv2_api_execution_arn}/*/*"
+    }
+  }
+
+  attach_policy_statements = true
+  policy_statements = {
+    dynamodb = {
+      effect    = "Allow",
+      actions   = ["dynamodb:*"],
+      resources = [aws_dynamodb_table.this.arn, "${aws_dynamodb_table.this.arn}/*"]
     }
   }
 
