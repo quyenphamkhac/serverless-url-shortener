@@ -43,15 +43,9 @@ resource "aws_dynamodb_table" "this" {
   name         = var.table_name
   billing_mode = "PAY_PER_REQUEST"
   hash_key     = "Id"
-  range_key    = "Timestamp"
 
   attribute {
     name = "Id"
-    type = "S"
-  }
-
-  attribute {
-    name = "Timestamp"
     type = "S"
   }
 
@@ -150,6 +144,7 @@ module "lambda_redirector" {
   }
 
   environment_variables = {
+    "TABLE_NAME"          = aws_dynamodb_table.this.name
     "SERVERLESS_PLATFORM" = "Terraform"
   }
 
@@ -189,6 +184,7 @@ module "lambda_shortener" {
   }
 
   environment_variables = {
+    "TABLE_NAME"          = aws_dynamodb_table.this.name
     "SERVERLESS_PLATFORM" = "Terraform"
   }
 
