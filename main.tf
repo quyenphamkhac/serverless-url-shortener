@@ -27,7 +27,7 @@ data "aws_route53_zone" "this" {
 # Cloudwatch Logs
 ###################
 resource "aws_cloudwatch_log_group" "this" {
-  name              = "${var.env_stage}-${var.service_name}"
+  name              = "/aws/apigateway/${var.env_stage}-${var.service_name}-http-api"
   retention_in_days = 7
 
   tags = {

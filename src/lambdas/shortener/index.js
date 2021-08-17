@@ -26,7 +26,7 @@ exports.handler = async (event, context, callback) => {
       .promise();
     const data = {
       originalUrl: url,
-      shortenUrl: `${event.requestContext.domainName}/${shortId}`,
+      shortenUrl: `https://${event.requestContext.domainName}/${shortId}`,
     };
     callback(null, data);
   } catch (error) {
